@@ -1,0 +1,17 @@
+## Get All users
+GET http://localhost:3000/users
+
+###
+
+## Get user by id
+GET http://localhost:3000/users/:id
+
+###
+
+## Create user
+POST http://localhost:3000/users
+content-type: application/json
+
+{
+  "name": "José"
+}
