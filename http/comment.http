@@ -1,0 +1,13 @@
+## Get All Comments
+GET http://localhost:3000/comments?parentCommentId=651abf7d1da2ee98c36c9671
+###
+
+## Create a comment
+POST http://localhost:3000/comments
+Content-Type: application/json
+
+{
+  "text": "nested comment comment",
+  "userId": "6519ecdd8f6b82f12e7cf9fa",
+  "parentCommentId": "651abf7d1da2ee98c36c9671"
+}
