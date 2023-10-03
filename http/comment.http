@@ -1,5 +1,5 @@
 ## Get All Comments
-GET http://localhost:3000/comments?parentCommentId=651abf7d1da2ee98c36c9671
+GET http://localhost:3000/comments?parentCommentId=2928
 ###
 
 ## Create a comment

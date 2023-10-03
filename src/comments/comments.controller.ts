@@ -1,7 +1,16 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { CommentsService } from './comments.service';
 import { CreateCommentDto } from './dto/create-comment.dto';
 import { UpdateCommentDto } from './dto/update-comment.dto';
+import { Query } from '@nestjs/common/decorators';
 
 @Controller('comments')
 export class CommentsController {
@@ -13,8 +22,10 @@ export class CommentsController {
   }
 
   @Get()
-  findAll() {
-    return this.commentsService.findAll();
+  findAll(@Query() params) {
+    return params.parentCommentId
+      ? this.commentsService.findCommentsByParentId(params.parentCommentId)
+      : this.commentsService.findTopLevelComments();
   }
 
   @Get(':id')
